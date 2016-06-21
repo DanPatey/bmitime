@@ -52,7 +52,7 @@ int main(int argc, const char * argv[]) {
         
         [employees removeObjectAtIndex:5];
         
-        NSlog(@"Giving up ownership of arrays");
+        NSLog(@"Giving up ownership of arrays");
         
         employees = nil;
     }
