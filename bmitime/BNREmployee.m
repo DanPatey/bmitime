@@ -9,6 +9,14 @@
 #import "BNREmployee.h"
 #import "BNRAsset.h"
 
+@interface BNREmployee()
+{
+    NSMutableSet *_assets;
+}
+
+@property (nonatomic) unsigned int officeAlarmCode;
+@end
+
 @implementation BNREmployee
 
 - (void)setAssets:(NSArray *)a
@@ -24,9 +32,10 @@
 - (void)addAssets:(BNRAsset *)a
 {
     if (!_assets) {
-        _assets = [[NSMutableArray alloc] init];
+        _assets = [[NSMutableSet alloc] init];
     }
     [_assets addObject:a];
+    a.holder = self;
 }
 
 - (unsigned int)valueOfAssets
